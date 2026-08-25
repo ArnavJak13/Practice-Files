@@ -15,3 +15,13 @@ elif choice == 4:
     print(num_1 / num_2)
 else:
     print("Invalid choice", "\nRun the program again and choose a valid option.")
+
+
+n = float(input("Enter your number: "))
+
+if n < 0:
+    print("Your number is negative")
+elif n > 0:
+    print("Your number is positive")
+else:
+    print("Your number is zero")
