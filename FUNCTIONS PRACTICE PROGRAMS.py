@@ -55,3 +55,98 @@ prime_factors(num)
 for i in range(1, 101):
     if i % 2 == 0:
         print(i)
+
+
+# 5. Write a python program which accepts 3 coefficients of the quadratic equation and generates real roots (with same or different values). 
+#If (b raised to 2 - 4ac) < 0, use of math.sqrt function generates an exception as Value error "math domain error". 
+#Show exception handling for ValueError, NameError and TypeError.
+
+import math
+
+def find_roots (a, b, c):
+    try:
+        d = b**2 - 4*a*c
+        if d<0:
+            #This will generate ValueError
+            r1 = (-b + math.sqrt(d)) / (2*a)
+            r2 = (-b - math.sqrt(d)) / (2*a)
+        
+        elif d==0:
+            r1=r2= -b/(2*a)
+            print("Roots are equal.")
+            print("Root 1 =", r1)
+            print("Root 2 =", r2)
+
+        else:
+            r1 = (-b + math.sqrt(d)) / (2*a)
+            r2 = (-b - math.sqrt(d)) / (2*a)
+            print("Roots are real and different.")
+            print("Root 1 =", r1)
+            print("Root 2 =", r2)
+
+    except ValueError as e:
+        print("Value Error:", e)
+        print("Cannot calculate square root of a negative number.")
+
+    except NameError as e:
+        print("Name Error:", e)
+
+    except TypeError as e:
+        print ("Type Error:", e)
+        print ("Coefficients must be numbers.")
+
+    def main():
+        try:
+            a = float(input("Error coefficient a"))
+            b = float(input("Error coefficient b"))
+            c = float(input("Error coefficient c"))
+            if a==0:
+                print ("Not a quadratic equation.")
+            else:
+                find_roots (a,b,c)
+        except ValueError as e:
+            print ("Value Error", e)
+            print ("Please enter numeric values")
+        
+        except TypeError as e:
+
+
+
+
+
+
+
+
+# RECURSION
+
+#1. print the numbers
+
+def print_numbers(n):
+    if n==0:     #Base Condition
+        return
+        print_numbers(n-1)  #Recursive Call
+        print(n)
+    n = int(input("Enter n:"))
+    print_numbers (n)
+
+
+# 2. Write a python program to show factorial of a number.
+
+def factorial (n):
+    if n==0 or n==1:
+        return 1
+    return n*factorial (n-1)
+
+    n = int(input("Enter a number:"))
+    print("Factorial =", factorial(n))
+
+
+# 3. Write a python program to show the numbers in fibbonacci sequence.
+
+def fibbonacci (n):
+    if n<=1:
+        return n
+    return fibbonacci(n-1) + fibbonacci(n-2)
+n = int(input("Enter number of terms:"))
+for i in range (n):
+    print (fibbonacci(i), end="")
