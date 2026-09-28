@@ -86,3 +86,28 @@ print (arr[-3:-1])
 import numpy as np
 arr = np.array ([1, 2, 3, 4, 5, 6, 7])
 print (arr[::2])
+
+
+# 11.
+import numpy as np
+arr = np.array ([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])
+print (arr[1, 1:4])
+
+
+# 12.
+import numpy as np
+arr = np.array ([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+element = arr[1,2] # Selects the element at row index 1
+# column index 2 (value 6)
+
+
+#13.
+import numpy as np
+arr = np.array ([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+row_slice = arr[0:2, :]
+
+
+# 14.
+import numpy as np
+arr = np.array ([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+col_slice = arr [:, 1:3]
